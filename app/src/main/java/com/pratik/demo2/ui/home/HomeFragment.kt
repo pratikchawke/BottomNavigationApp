@@ -1,5 +1,6 @@
 package com.pratik.demo2.ui.home
 
+import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -8,6 +9,7 @@ import android.widget.TextView
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
+import com.pratik.demo2.DetailActivity
 import com.pratik.demo2.R
 
 class HomeFragment : Fragment() {
@@ -26,6 +28,11 @@ class HomeFragment : Fragment() {
         homeViewModel.text.observe(this, Observer {
             textView.text = it
         })
+        textView.setOnClickListener({showDetailActivity()})
         return root
+    }
+
+    fun showDetailActivity() {
+        startActivity(Intent(context,DetailActivity::class.java))
     }
 }

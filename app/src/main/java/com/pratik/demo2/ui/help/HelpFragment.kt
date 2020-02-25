@@ -26,6 +26,7 @@ class HelpFragment : Fragment() {
         helpViewModel.text.observe(this, Observer {
             textView.text = it
         })
+        activity?.actionBar?.setDisplayHomeAsUpEnabled(true)
         return root
     }
 }
