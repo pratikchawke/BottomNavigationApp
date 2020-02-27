@@ -1,9 +1,11 @@
 package com.pratik.demo2
 
+import android.content.Intent
 import android.content.pm.ActivityInfo
 import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
+import android.view.View
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.navigation.NavController
@@ -53,5 +55,9 @@ class MainActivity : AppCompatActivity() {
 
     override fun onCreateOptionsMenu(menu: Menu): Boolean {
         return true
+    }
+
+    fun showDetailActivity(view: View) {
+        startActivity(Intent(applicationContext, DetailActivity::class.java))
     }
 }
